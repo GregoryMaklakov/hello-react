@@ -1,0 +1,28 @@
+:root {
+    --warning-color: #FD9B00;
+    --success-color: #14B985;
+    --error-color: #FF3F54;
+}
+
+.container {
+    min-height: 100vh;
+    background-color: #9483e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.notifBtn:not(:last-child) {
+    margin-right: 44px;
+}
+
+@media screen and (max-width: 778px) {
+    .container {
+        flex-direction: column;
+    }
+    .notifBtn:not(:last-child) {
+        margin-right: 0px;
+        margin-bottom: 24px;
+    }
+}
