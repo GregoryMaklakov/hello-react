@@ -5,7 +5,6 @@ import IconWarning from "../../assets/svg/warning.svg";
 import IconError from "../../assets/svg/error.svg";
 import styles from "./Notifications.module.css";
 
-
 const icons = {
   succes: IconSuccess,
   warning: IconWarning,
@@ -13,14 +12,16 @@ const icons = {
 };
 
 export const Notification = ({ className, type, children }) => {
-
-    const onClick = (e) => {
-        alert('Будь яций текст');
-    }
+  const onClick = () => {
+    alert("Будь яций текст =)");
+  };
 
   return (
-    <button onClick={onClick} className={clsx(styles.button, styles[type], className)}>
-        <img className={styles.icon} src={icons[type]} alt={type}/>
+    <button
+      onClick={onClick}
+      className={clsx(styles.button, styles[type], className)}
+    >
+      <img className={styles.icon} src={icons[type]} alt={type} />
       <span className={styles.label}>{children}</span>
     </button>
   );
