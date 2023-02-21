@@ -1,14 +1,12 @@
-import { Notification } from '../components/Notifications'
-import styles from './App.module.css';
-import { IconError, IconWarning, IconSuccess  } from '../components/icons';
+import { Notification } from "../components/Notifications";
+import styles from "./App.module.css";
 
 export const App = () => {
   return (
     <div className={styles.container}>
-      <Notification color="var(--warning-color)" Icon={IconWarning} label="Notification" className={styles.notifBtn} />
-      <Notification color="var(--success-color)" Icon={IconSuccess} label="Notification" className={styles.notifBtn} />
-      <Notification color="var(--error-color)" Icon={IconError} label="Notification" className={styles.notifBtn} />
+      <Notification type='succes'>Succes</Notification>
+      <Notification type='warning'>Warning</Notification>
+      <Notification type='error'>Error</Notification>
     </div>
-  )
-}
-
+  );
+};
