@@ -13,8 +13,13 @@ const icons = {
 };
 
 export const Notification = ({ className, type, children }) => {
+
+    const onClick = (e) => {
+        alert('Будь яций текст');
+    }
+
   return (
-    <button className={clsx(styles.button, styles[type], className)}>
+    <button onClick={onClick} className={clsx(styles.button, styles[type], className)}>
         <img className={styles.icon} src={icons[type]} alt={type}/>
       <span className={styles.label}>{children}</span>
     </button>
@@ -23,6 +28,6 @@ export const Notification = ({ className, type, children }) => {
 
 Notification.propTypes = {
   type: PropTypes.oneOf(["succes", "warning", "error"]).isRequired,
-  children: PropTypes.string.isRequired,
+  children: PropTypes.node,
   className: PropTypes.string,
 };
