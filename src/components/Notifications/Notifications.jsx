@@ -1,8 +1,11 @@
 import clsx from "clsx";
 import PropTypes from "prop-types"; // ES6
-import IconSuccess from "../../assets/svg/success.svg";
-import IconWarning from "../../assets/svg/warning.svg";
-import IconError from "../../assets/svg/error.svg";
+
+import {IconSuccess, IconWarning, IconError} from '../icons';
+
+// import IconSuccess from "../../assets/svg/success.svg";
+// import IconWarning from "../../assets/svg/warning.svg";
+// import IconError from "../../assets/svg/error.svg";
 import styles from "./Notifications.module.css";
 
 const icons = {
@@ -11,9 +14,11 @@ const icons = {
   error: IconError,
 };
 
-export const Notification = ({ className, type, children }) => {
+const Icon = icons[type];  
+
+export const Notification = ({ className, type, children, Icon }) => {
   const onClick = () => {
-    alert("Будь яций текст =)");
+    alert("Будь який текст =)");
   };
 
   return (
@@ -21,7 +26,9 @@ export const Notification = ({ className, type, children }) => {
       onClick={onClick}
       className={clsx(styles.button, styles[type], className)}
     >
-      <img className={styles.icon} src={icons[type]} alt={type} />
+        <Icon className={styles.icon}></Icon>
+
+      {/* <img className={styles.icon} src={icons[type]} alt={type} /> */}
       <span className={styles.label}>{children}</span>
     </button>
   );
